@@ -16,22 +16,23 @@ final _privateConstructorUsedError = UnsupportedError(
 
 /// @nodoc
 mixin _$PageViewEvent {
+  String? get city => throw _privateConstructorUsedError;
   @optionalTypeArgs
   TResult when<TResult extends Object?>({
     required TResult Function(int? page, String? city) pageChanged,
-    required TResult Function() showLocationWeather,
+    required TResult Function(String city) showLocationWeather,
   }) =>
       throw _privateConstructorUsedError;
   @optionalTypeArgs
   TResult? whenOrNull<TResult extends Object?>({
     TResult? Function(int? page, String? city)? pageChanged,
-    TResult? Function()? showLocationWeather,
+    TResult? Function(String city)? showLocationWeather,
   }) =>
       throw _privateConstructorUsedError;
   @optionalTypeArgs
   TResult maybeWhen<TResult extends Object?>({
     TResult Function(int? page, String? city)? pageChanged,
-    TResult Function()? showLocationWeather,
+    TResult Function(String city)? showLocationWeather,
     required TResult orElse(),
   }) =>
       throw _privateConstructorUsedError;
@@ -54,6 +55,12 @@ mixin _$PageViewEvent {
     required TResult orElse(),
   }) =>
       throw _privateConstructorUsedError;
+
+  /// Create a copy of PageViewEvent
+  /// with the given fields replaced by the non-null parameter values.
+  @JsonKey(includeFromJson: false, includeToJson: false)
+  $PageViewEventCopyWith<PageViewEvent> get copyWith =>
+      throw _privateConstructorUsedError;
 }
 
 /// @nodoc
@@ -61,6 +68,8 @@ abstract class $PageViewEventCopyWith<$Res> {
   factory $PageViewEventCopyWith(
           PageViewEvent value, $Res Function(PageViewEvent) then) =
       _$PageViewEventCopyWithImpl<$Res, PageViewEvent>;
+  @useResult
+  $Res call({String city});
 }
 
 /// @nodoc
@@ -75,13 +84,27 @@ class _$PageViewEventCopyWithImpl<$Res, $Val extends PageViewEvent>
 
   /// Create a copy of PageViewEvent
   /// with the given fields replaced by the non-null parameter values.
+  @pragma('vm:prefer-inline')
+  @override
+  $Res call({
+    Object? city = null,
+  }) {
+    return _then(_value.copyWith(
+      city: null == city
+          ? _value.city!
+          : city // ignore: cast_nullable_to_non_nullable
+              as String,
+    ) as $Val);
+  }
 }
 
 /// @nodoc
-abstract class _$$PageChangedImplCopyWith<$Res> {
+abstract class _$$PageChangedImplCopyWith<$Res>
+    implements $PageViewEventCopyWith<$Res> {
   factory _$$PageChangedImplCopyWith(
           _$PageChangedImpl value, $Res Function(_$PageChangedImpl) then) =
       __$$PageChangedImplCopyWithImpl<$Res>;
+  @override
   @useResult
   $Res call({int? page, String? city});
 }
@@ -154,7 +177,7 @@ class _$PageChangedImpl implements PageChanged {
   @optionalTypeArgs
   TResult when<TResult extends Object?>({
     required TResult Function(int? page, String? city) pageChanged,
-    required TResult Function() showLocationWeather,
+    required TResult Function(String city) showLocationWeather,
   }) {
     return pageChanged(page, city);
   }
@@ -163,7 +186,7 @@ class _$PageChangedImpl implements PageChanged {
   @optionalTypeArgs
   TResult? whenOrNull<TResult extends Object?>({
     TResult? Function(int? page, String? city)? pageChanged,
-    TResult? Function()? showLocationWeather,
+    TResult? Function(String city)? showLocationWeather,
   }) {
     return pageChanged?.call(page, city);
   }
@@ -172,7 +195,7 @@ class _$PageChangedImpl implements PageChanged {
   @optionalTypeArgs
   TResult maybeWhen<TResult extends Object?>({
     TResult Function(int? page, String? city)? pageChanged,
-    TResult Function()? showLocationWeather,
+    TResult Function(String city)? showLocationWeather,
     required TResult orElse(),
   }) {
     if (pageChanged != null) {
@@ -218,20 +241,26 @@ abstract class PageChanged implements PageViewEvent {
       _$PageChangedImpl;
 
   int? get page;
+  @override
   String? get city;
 
   /// Create a copy of PageViewEvent
   /// with the given fields replaced by the non-null parameter values.
+  @override
   @JsonKey(includeFromJson: false, includeToJson: false)
   _$$PageChangedImplCopyWith<_$PageChangedImpl> get copyWith =>
       throw _privateConstructorUsedError;
 }
 
 /// @nodoc
-abstract class _$$ShowLocationWeatherImplCopyWith<$Res> {
+abstract class _$$ShowLocationWeatherImplCopyWith<$Res>
+    implements $PageViewEventCopyWith<$Res> {
   factory _$$ShowLocationWeatherImplCopyWith(_$ShowLocationWeatherImpl value,
           $Res Function(_$ShowLocationWeatherImpl) then) =
       __$$ShowLocationWeatherImplCopyWithImpl<$Res>;
+  @override
+  @useResult
+  $Res call({String city});
 }
 
 /// @nodoc
@@ -244,55 +273,80 @@ class __$$ShowLocationWeatherImplCopyWithImpl<$Res>
 
   /// Create a copy of PageViewEvent
   /// with the given fields replaced by the non-null parameter values.
+  @pragma('vm:prefer-inline')
+  @override
+  $Res call({
+    Object? city = null,
+  }) {
+    return _then(_$ShowLocationWeatherImpl(
+      city: null == city
+          ? _value.city
+          : city // ignore: cast_nullable_to_non_nullable
+              as String,
+    ));
+  }
 }
 
 /// @nodoc
 
 class _$ShowLocationWeatherImpl implements ShowLocationWeather {
-  const _$ShowLocationWeatherImpl();
+  const _$ShowLocationWeatherImpl({required this.city});
+
+  @override
+  final String city;
 
   @override
   String toString() {
-    return 'PageViewEvent.showLocationWeather()';
+    return 'PageViewEvent.showLocationWeather(city: $city)';
   }
 
   @override
   bool operator ==(Object other) {
     return identical(this, other) ||
         (other.runtimeType == runtimeType &&
-            other is _$ShowLocationWeatherImpl);
+            other is _$ShowLocationWeatherImpl &&
+            (identical(other.city, city) || other.city == city));
   }
 
   @override
-  int get hashCode => runtimeType.hashCode;
+  int get hashCode => Object.hash(runtimeType, city);
+
+  /// Create a copy of PageViewEvent
+  /// with the given fields replaced by the non-null parameter values.
+  @JsonKey(includeFromJson: false, includeToJson: false)
+  @override
+  @pragma('vm:prefer-inline')
+  _$$ShowLocationWeatherImplCopyWith<_$ShowLocationWeatherImpl> get copyWith =>
+      __$$ShowLocationWeatherImplCopyWithImpl<_$ShowLocationWeatherImpl>(
+          this, _$identity);
 
   @override
   @optionalTypeArgs
   TResult when<TResult extends Object?>({
     required TResult Function(int? page, String? city) pageChanged,
-    required TResult Function() showLocationWeather,
+    required TResult Function(String city) showLocationWeather,
   }) {
-    return showLocationWeather();
+    return showLocationWeather(city);
   }
 
   @override
   @optionalTypeArgs
   TResult? whenOrNull<TResult extends Object?>({
     TResult? Function(int? page, String? city)? pageChanged,
-    TResult? Function()? showLocationWeather,
+    TResult? Function(String city)? showLocationWeather,
   }) {
-    return showLocationWeather?.call();
+    return showLocationWeather?.call(city);
   }
 
   @override
   @optionalTypeArgs
   TResult maybeWhen<TResult extends Object?>({
     TResult Function(int? page, String? city)? pageChanged,
-    TResult Function()? showLocationWeather,
+    TResult Function(String city)? showLocationWeather,
     required TResult orElse(),
   }) {
     if (showLocationWeather != null) {
-      return showLocationWeather();
+      return showLocationWeather(city);
     }
     return orElse();
   }
@@ -330,5 +384,16 @@ class _$ShowLocationWeatherImpl implements ShowLocationWeather {
 }
 
 abstract class ShowLocationWeather implements PageViewEvent {
-  const factory ShowLocationWeather() = _$ShowLocationWeatherImpl;
+  const factory ShowLocationWeather({required final String city}) =
+      _$ShowLocationWeatherImpl;
+
+  @override
+  String get city;
+
+  /// Create a copy of PageViewEvent
+  /// with the given fields replaced by the non-null parameter values.
+  @override
+  @JsonKey(includeFromJson: false, includeToJson: false)
+  _$$ShowLocationWeatherImplCopyWith<_$ShowLocationWeatherImpl> get copyWith =>
+      throw _privateConstructorUsedError;
 }

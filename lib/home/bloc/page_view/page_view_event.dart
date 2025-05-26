@@ -9,5 +9,7 @@ class PageViewEvent with _$PageViewEvent {
     String? city,
   }) = PageChanged;
 
-  const factory PageViewEvent.showLocationWeather() = ShowLocationWeather;
+  const factory PageViewEvent.showLocationWeather({
+    required String city,
+  }) = ShowLocationWeather;
 }

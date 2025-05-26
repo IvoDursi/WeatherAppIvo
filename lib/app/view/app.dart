@@ -67,6 +67,9 @@ class App extends StatelessWidget {
               ),
             ),
             BlocProvider(
+              create: (context) => LocationWeatherCubit(),
+            ),
+            BlocProvider(
               create: (context) => InternetConnectionCubit(),
             ),
           ],

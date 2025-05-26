@@ -3,6 +3,7 @@ import 'package:flutter/material.dart';
 import 'package:flutter/widgets.dart';
 import 'package:flutter_bloc/flutter_bloc.dart';
 import 'package:weather_app_ivo/home/bloc/bloc.dart';
+import 'package:weather_app_ivo/home/bloc/location_weather/location_weather_state.dart';
 import 'package:weather_app_ivo/home/widgets/home_body.dart';
 import 'package:weather_app_ivo/home/widgets/widgets.dart';
 import 'package:weather_app_ivo/l10n/l10n.dart';
@@ -26,16 +27,31 @@ class HomePage extends StatelessWidget {
         elevation: 0,
       ),
       floatingActionButton:
-          BlocBuilder<InternetConnectionCubit, InternetConnectionState>(
-        builder: (context, state) {
-          return state.maybeWhen(
-            orElse: () => const SizedBox.shrink(),
-            connected: () => FloatingActionButton(
-              onPressed: () => context.read<PageViewBloc>().add(
-                    const PageViewEvent.showLocationWeather(),
+          BlocConsumer<LocationWeatherCubit, LocationWeatherState>(
+        listener: (context, state) {
+          state.maybeWhen(
+            orElse: () {},
+            loaded: (city) => context.read<PageViewBloc>().add(
+                  PageViewEvent.showLocationWeather(city: city),
+                ),
+          );
+        },
+        builder: (context, locationState) {
+          return BlocBuilder<InternetConnectionCubit, InternetConnectionState>(
+            builder: (context, state) {
+              return state.maybeWhen(
+                orElse: () => const SizedBox.shrink(),
+                connected: () => locationState.maybeWhen(
+                  loading: () => const CircularProgressIndicator(),
+                  orElse: () => FloatingActionButton(
+                    onPressed: () => context
+                        .read<LocationWeatherCubit>()
+                        .showLocationWeather(),
+                    child: const Icon(Icons.location_on),
                   ),
-              child: const Icon(Icons.location_on),
-            ),
+                ),
+              );
+            },
           );
         },
       ),
