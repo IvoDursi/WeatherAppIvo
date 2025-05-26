@@ -3,6 +3,7 @@ import 'package:flutter/material.dart';
 import 'package:flutter/widgets.dart';
 import 'package:flutter_bloc/flutter_bloc.dart';
 import 'package:weather_app_ivo/home/bloc/bloc.dart';
+import 'package:weather_app_ivo/home/widgets/home_body.dart';
 import 'package:weather_app_ivo/home/widgets/widgets.dart';
 import 'package:weather_app_ivo/l10n/l10n.dart';
 
@@ -52,22 +53,7 @@ class HomePage extends StatelessWidget {
               ),
             ),
           ),
-          SingleChildScrollView(
-            child: SizedBox(
-              height: MediaQuery.of(context).size.height,
-              child: Column(
-                children: [
-                  SizedBox(
-                    height: MediaQuery.of(context).size.height * 0.55,
-                    child: const CitiesCards(),
-                  ),
-                  const Flexible(
-                    child: CitySearch(),
-                  ),
-                ],
-              ),
-            ),
-          ),
+          const HomeBody(),
         ],
       ),
     );
