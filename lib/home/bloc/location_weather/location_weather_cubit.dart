@@ -3,7 +3,7 @@ import 'dart:async';
 import 'package:flutter_bloc/flutter_bloc.dart';
 import 'package:geocoding/geocoding.dart';
 import 'package:geolocator/geolocator.dart';
-import 'package:weather_app_ivo/home/bloc/location_weather/location_weather_state.dart';
+import 'package:weather_app_ivo/home/bloc/bloc.dart';
 
 class LocationWeatherCubit extends Cubit<LocationWeatherState> {
   LocationWeatherCubit() : super(const LocationWeatherState.initial());
