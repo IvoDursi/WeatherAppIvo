@@ -9,9 +9,9 @@ class GooglePlacesService {
   /// {@macro open_weather_service}
   const GooglePlacesService();
 
-  final baseUrl = 'https://api.openweathermap.org/data/2.5';
+  static const baseUrl = 'https://api.openweathermap.org/data/2.5';
 
-  final apiKey = 'a355e430565738e65f8b3c353cf3a0c4';
+  static const apiKey = 'a355e430565738e65f8b3c353cf3a0c4';
 
   Future<Either<void, List<String>>> getWeatherFromCity(String query) async {
     final uri = Uri.https(
@@ -26,16 +26,13 @@ class GooglePlacesService {
     );
     try {
       final response = await http.get(uri);
-      print(response);
 
       if (response.statusCode == 200) {
         final data = jsonDecode(response.body) as Map<String, dynamic>;
 
-        print(data);
-
         final predictions = data['predictions'] as List<dynamic>;
 
-        List<String> places = [];
+        final places = <String>[];
 
         for (final prediction in predictions) {
           places.add(prediction['description'].toString());
@@ -43,8 +40,10 @@ class GooglePlacesService {
 
         return Right(places);
       }
-    } catch (e) {}
+    } catch (e) {
+      return const Left(null);
+    }
 
-    return Left(null);
+    return const Left(null);
   }
 }

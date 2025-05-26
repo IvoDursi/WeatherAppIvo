@@ -22,9 +22,10 @@ class AppBlocObserver extends BlocObserver {
 }
 
 Future<void> bootstrap(
-    FutureOr<Widget> Function(
-      LocalStorageService localStorageService,
-    ) builder) async {
+  FutureOr<Widget> Function(
+    LocalStorageService localStorageService,
+  ) builder,
+) async {
   FlutterError.onError = (details) {
     log(details.exceptionAsString(), stackTrace: details.stack);
   };

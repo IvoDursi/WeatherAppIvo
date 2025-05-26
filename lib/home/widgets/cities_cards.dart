@@ -19,7 +19,7 @@ class _CitiesCardsState extends State<CitiesCards> {
   @override
   void initState() {
     super.initState();
-    _pageController = PageController(viewportFraction: 0.95, initialPage: 0);
+    _pageController = PageController(viewportFraction: 0.95);
 
     final cities = context.read<PageViewBloc>().state.cities;
     if (cities.isNotEmpty) {
@@ -53,7 +53,8 @@ class _CitiesCardsState extends State<CitiesCards> {
 
         return Stack(
           children: [
-            SizedBox(
+            Container(
+              margin: const EdgeInsets.only(top: 10),
               height: MediaQuery.of(context).size.height * 0.55,
               child: PageView.builder(
                 controller: _pageController,
@@ -201,7 +202,7 @@ class CityCard extends StatelessWidget {
                           ),
                           const SizedBox(width: 20),
                           Text(
-                            'Max ${cityWeather.main.temp_max.toTemperatureString()}°',
+                            'Max ${cityWeather.main.temp_max.toTemperatureString()}',
                             style: const TextStyle(
                               color: Colors.white,
                               fontSize: 18,

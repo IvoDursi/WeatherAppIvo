@@ -30,7 +30,7 @@ class LocalStorageService {
     try {
       value = hive.box<String>('appBox').get(key);
       if (value == null) {
-        return Right(null);
+        return const Right(null);
       }
     } catch (e) {
       return const Left(null);

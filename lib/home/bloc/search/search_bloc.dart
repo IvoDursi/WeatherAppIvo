@@ -50,8 +50,9 @@ class SearchBloc extends Bloc<SearchEvent, SearchState> {
     final recentSearches =
         (recentSearchesEither as Right<void, List<CityWeather>>).value;
 
-    emit(SearchState.initial(
-        cities: recentSearches.map((e) => e.name).toList()));
+    emit(
+      SearchState.initial(cities: recentSearches.map((e) => e.name).toList()),
+    );
   }
 
   Future<void> _onRemoveSearch(

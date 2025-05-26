@@ -1,6 +1,4 @@
 import 'package:flutter_bloc/flutter_bloc.dart';
-import 'package:geocoding/geocoding.dart';
-import 'package:geolocator/geolocator.dart';
 import 'package:weather_app_ivo/home/bloc/page_view/page_view_event.dart';
 import 'package:weather_app_ivo/home/bloc/page_view/page_view_state.dart';
 

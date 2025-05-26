@@ -10,9 +10,9 @@ class OpenWeatherService {
   /// {@macro open_weather_service}
   const OpenWeatherService();
 
-  final baseUrl = 'https://api.openweathermap.org/data/2.5';
+  static const baseUrl = 'https://api.openweathermap.org/data/2.5';
 
-  final apiKey = 'a355e430565738e65f8b3c353cf3a0c4';
+  static const apiKey = 'a355e430565738e65f8b3c353cf3a0c4';
 
   Future<Either<void, CityWeatherDTO>> getWeatherFromCity(String city) async {
     final uri = Uri.parse(
