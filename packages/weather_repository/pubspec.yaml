@@ -1,0 +1,32 @@
+name: weather_repository
+description: Weather Repository package
+version: 0.1.0+1
+publish_to: none
+
+environment:
+  sdk: ^3.5.0
+  flutter: ^3.24.0
+
+dependencies:
+  flutter:
+    sdk: flutter
+  dartz: ^0.10.1
+  freezed_annotation: ^2.4.1
+  json_annotation: ^4.9.0
+  connectivity_plus: ^6.1.4
+  http: ^1.4.0
+  open_weather_service:
+    path: ../open_weather_service
+  local_storage_service:
+    path: ../local_storage_service
+  google_places_service:
+    path: ../google_places_service
+
+dev_dependencies:
+  flutter_test:
+    sdk: flutter
+  mocktail: ^1.0.4
+  very_good_analysis: ^6.0.0
+  build_runner: ^2.4.6
+  freezed: ^2.4.5
+  json_serializable: ^6.7.1

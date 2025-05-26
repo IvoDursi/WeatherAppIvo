@@ -1,0 +1,48 @@
+{
+    "@@locale": "es",
+    "counterAppBarTitle": "Contador",
+    "@counterAppBarTitle": {
+        "description": "Texto mostrado en la AppBar de la página del contador"
+    },
+    "weatherIn": "Clima en",
+    "windSpeed": "Velocidad:",
+    "searchHintText": "Buscar ciudad...",
+    "emptyRecents": "No hay búsquedas recientes",
+    "clearSky": "Cielo despejado",
+    "noResults": "Sin resultados",
+    "@clearSky": {
+        "description": "Weather description for clear sky"
+    },
+    "fewClouds": "Pocas nubes",
+    "@fewClouds": {
+        "description": "Weather description for few clouds"
+    },
+    "scatteredClouds": "Nubes dispersas",
+    "@scatteredClouds": {
+        "description": "Weather description for scattered clouds"
+    },
+    "brokenClouds": "Nublado",
+    "@brokenClouds": {
+        "description": "Weather description for broken clouds"
+    },
+    "showerRain": "Lluvias fuertes",
+    "@showerRain": {
+        "description": "Weather description for shower rain"
+    },
+    "rain": "Lluvia",
+    "@rain": {
+        "description": "Weather description for rain"
+    },
+    "thunderstorm": "Tormenta",
+    "@thunderstorm": {
+        "description": "Weather description for thunderstorm"
+    },
+    "snow": "Nieve",
+    "@snow": {
+        "description": "Weather description for snow"
+    },
+    "mist": "Neblina",
+    "@mist": {
+        "description": "Weather description for mist"
+    }
+}

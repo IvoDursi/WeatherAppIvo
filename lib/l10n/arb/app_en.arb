@@ -1,0 +1,49 @@
+{
+    "@@locale": "en",
+    "counterAppBarTitle": "Counter",
+    "@counterAppBarTitle": {
+        "description": "Text shown in the AppBar of the Counter Page"
+    },
+    "weatherIn": "Weather in",
+    "windSpeed": "Wind speed:",
+    "searchHintText": "Search city...",
+    "emptyRecents": "No recent search history",
+    "noResults": "No results",
+    "clearSky": "Clear sky",
+    "@clearSky": {
+        "description": "Weather description for clear sky"
+    },
+    "fewClouds": "Few clouds",
+    "@fewClouds": {
+        "description": "Weather description for few clouds"
+    },
+    "scatteredClouds": "Scattered clouds",
+    "@scatteredClouds": {
+        "description": "Weather description for scattered clouds"
+    },
+    "brokenClouds": "Broken clouds",
+    "@brokenClouds": {
+        "description": "Weather description for broken clouds"
+    },
+    "showerRain": "Shower rain",
+    "@showerRain": {
+        "description": "Weather description for shower rain"
+    },
+    "rain": "Rain",
+    "@rain": {
+        "description": "Weather description for rain"
+    },
+    "thunderstorm": "Thunderstorm",
+    "@thunderstorm": {
+        "description": "Weather description for thunderstorm"
+    },
+    "snow": "Snow",
+    "@snow": {
+        "description": "Weather description for snow"
+    },
+    "mist": "Mist",
+    "@mist": {
+        "description": "Weather description for mist"
+    }
+
+}
