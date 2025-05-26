@@ -9,13 +9,13 @@ class GooglePlacesService {
   /// {@macro open_weather_service}
   const GooglePlacesService();
 
-  static const baseUrl = 'https://api.openweathermap.org/data/2.5';
+  static const baseUrl = 'maps.googleapis.com';
 
   static const apiKey = 'a355e430565738e65f8b3c353cf3a0c4';
 
   Future<Either<void, List<String>>> getWeatherFromCity(String query) async {
     final uri = Uri.https(
-      'maps.googleapis.com',
+      baseUrl,
       '/maps/api/place/autocomplete/json',
       {
         'input': query,
