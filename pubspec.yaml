@@ -20,7 +20,7 @@ dependencies:
   connectivity_plus: ^6.1.4
   animate_do: ^4.2.0
   geolocator: ^11.0.0
-  geocoding: ^3.0.0
+  geocoding: ^4.0.0
   weather_repository:
     path: packages/weather_repository
   open_weather_service:
